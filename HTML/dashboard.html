@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/CSS/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <!-- <img src="path/to/logo.png" alt="Logo" /> -->
+        <h2>Student Mng. System</h2>
+      </div>
+      <ul class="nav">
+        <li>
+          <a href="../HTML/dashboard.html"
+            ><i class="fas fa-home"></i> Dashboard</a
+          >
+        </li>
+        <li class="dropdown">
+          <a href="#">
+            <i class="fas fa-user-graduate"></i> Students
+            <i class="fas fa-caret-down"></i>
+            <!-- Dropdown indicator -->
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../HTML/studentsForms.html">Add Student</a>
+            </li>
+            <li>
+              <a href="../HTML/studentdashboard.html">View Students</a>
+            </li>
+            <!-- <li>
+              <a href="../HTML/manageStudents.html">Manage Students</a>
+            </li> -->
+          </ul>
+        </li>
+
+        <li>
+          <a href="../HTML/parentsdashboard.html"
+            ><i class="fas fa-user-friends"></i> Parents</a
+          >
+        </li>
+        <li class="dropdown">
+          <a href="#">
+            <i class="fas fa-user-graduate"></i> Teachers
+            <i class="fas fa-caret-down"></i>
+            <!-- Dropdown indicator -->
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="../HTML/teachersforms.html">Add Teachers</a>
+            </li>
+            <li>
+              <a href="../HTML/teachersdashboard.html">View Teachers</a>
+            </li>
+            <!-- <li>
+              <a href="../HTML/manageStudents.html">Manage Students</a>
+            </li> -->
+          </ul>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-cog"></i> Account</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-book"></i> Subject</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-sliders-h"></i> Settings</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <header>
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
+        </div>
+        <div class="user-profile">
+          <i class="fas fa-bell"></i>
+          <i class="fas fa-user-circle"></i>
+        </div>
+      </header>
+
+      <!-- Dashboard Widgets -->
+      <div class="dashboard">
+        <div class="card total-students" style="background-color: #fee4cb">
+          <i class="fas fa-user-graduate"></i>
+          <h3>Students</h3>
+          <p>50000</p>
+        </div>
+        <div class="card total-teachers" style="background-color: #d7e3fc">
+          <i class="fas fa-chalkboard-teacher"></i>
+          <h3>Teachers</h3>
+          <p>1500</p>
+        </div>
+        <div class="card total-parents" style="background-color: #f6dbf6">
+          <i class="fas fa-user-friends"></i>
+          <h3>Parents</h3>
+          <p>60000</p>
+        </div>
+        <div class="card total-earnings" style="background-color: #fecaca">
+          <i class="fas fa-dollar-sign"></i>
+          <h3>Earnings</h3>
+          <p>$2000</p>
+        </div>
+
+        <div class="card earnings-chart">
+          <h3>Earnings</h3>
+          <canvas id="earningsChart"></canvas>
+        </div>
+        <div class="card expenses-chart">
+          <h3>Expenses</h3>
+          <canvas id="expensesChart"></canvas>
+        </div>
+        <div class="card students-chart">
+          <h3>Students</h3>
+          <canvas id="studentsChart"></canvas>
+        </div>
+        <div class="card calendar">
+          <h3>Event Calendar</h3>
+          <!-- Insert Calendar Content -->
+        </div>
+        <!-- <div class="card reminders">
+          <h3>Reminders</h3>
+          <ul>
+            <li>Reminder 1</li>
+            <li>Reminder 2</li>
+            <li>Reminder 3</li>
+          </ul>
+        </div>  -->
+      </div>
+    </div>
+  </body>
+</html>

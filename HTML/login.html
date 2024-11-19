@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Management Login</title>
+    <link rel="stylesheet" href="/CSS/login.css" />
+    <!-- Font Awesome for social media icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <h2>School Management System</h2>
+      <form class="login-form">
+        <div class="input-container">
+          <label id="main-username" for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+        </div>
+        <div class="input-container">
+          <label id="main-password" for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+
+        <div id="forgot-password">forgot password</div>
+        <div class="button-container">
+          <button type="submit" class="btn login-btn">Login</button>
+          <!-- <button type="reset" class="btn reset-btn">Reset</button> -->
+        </div>
+        <div class="social-media">
+          <p>Dont have an account? <span id="sign_up">Sign Up</span></p>
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

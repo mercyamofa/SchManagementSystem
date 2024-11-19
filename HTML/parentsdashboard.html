@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parents Dashboard</title>
+   <link rel="stylesheet" href="/CSS/studentsdashboard.css">
+   <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+</head>
+<body>
+    <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+          <!-- <img src="path/to/logo.png" alt="Logo" /> -->
+          <h2>Student Mng.  System</h2>
+        </div>
+        <ul class="nav">
+          <li>
+            <a href="../HTML/dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+          </li>
+          <li class="dropdown">
+            <a href="#">
+              <i class="fas fa-user-graduate"></i> Students
+              <i class="fas fa-caret-down"></i>
+              <!-- Dropdown indicator -->
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="../HTML/studentsForms.html">Add Student</a>
+              </li>
+              <li>
+                <a href="../HTML/studentdashboard.html">View Students</a>
+              </li>
+              <!-- <li>
+                <a href="../HTML/manageStudents.html">Manage Students</a>
+              </li> -->
+            </ul>
+          </li>
+          <li>
+            <a href="../HTML/parentsdashboard.html"><i class="fas fa-user-friends"></i> Parents</a>
+          </li>
+          <li class="dropdown">
+            <a href="#">
+              <i class="fas fa-user-graduate"></i> Teachers
+              <i class="fas fa-caret-down"></i>
+              <!-- Dropdown indicator -->
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="../HTML/teachersforms.html">Add Teachers</a>
+              </li>
+              <li>
+                <a href="../HTML/teachersdashboard.html">View Teachers</a>
+              </li>
+              <!-- <li>
+                <a href="../HTML/manageStudents.html">Manage Students</a>
+              </li> -->
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-cog"></i> Account</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-book"></i> Subject</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-sliders-h"></i> Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      
+      <!-- Main Content -->
+      <main class="main-content">
+<header>
+    <div  class="search-bar">
+  <input type="text" placeholder="Search" />
+</div>
+  <div class="header-icons">
+    <span class="icon">🔔</span>
+    <span class="icon">⚙️</span>
+    <span class="icon user">👤</span>
+  </div>
+</header>
+ 
+
+        <section class="student-data">
+          <h2>All Parents Data</h2>
+         
+  <div class="search-container">
+    <input type="text" placeholder="Search by name...">
+    <select>
+      <option value="" disabled selected>Select Class</option>
+      <option value="class1">Class 1</option>
+      <option value="class2">Class 2</option>
+      <option value="class3">Class 3</option>
+    </select>
+    <button>SEARCH</button>
+  </div>
+
+
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Occupation</th>
+                
+                <th>Address</th>
+                <th>E-mail</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Add rows here for each student -->
+              <tr>
+                <td>1</td>
+                <td>Mercy Amofa</td>
+                <td>Female</td>
+               
+                <td>Trader</td>
+                <td>59 Australia, Sydney</td>
+                <td>amofa11@gmail.com</td>
+                <td>+233 9988568</td>
+              </tr>
+              <!-- Repeat rows as necessary -->
+            </tbody>
+          </table>
+
+          <div class="pagination">
+            <button>Previous</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>Next</button>
+          </div>
+        </section>
+      
+      </main>
+</div>
+  </body>
+</html>
+</body>
+</html>
