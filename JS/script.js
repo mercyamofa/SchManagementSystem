@@ -40,17 +40,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   };
 
-  // Validate email format
   const validateEmail = (emailField) => {
     const parentRow = emailField.parentElement;
     let error = parentRow.querySelector(".error-message");
 
-    // Remove existing error message
     if (error) {
       error.remove();
     }
 
-    // Check if the email format is valid
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (emailField.value && !emailRegex.test(emailField.value)) {
       error = document.createElement("span");
@@ -63,18 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   };
 
-  // Validate phone format
   const validatePhone = (phoneField) => {
     const parentRow = phoneField.parentElement;
     let error = parentRow.querySelector(".error-message");
 
-    // Remove existing error message
     if (error) {
       error.remove();
     }
 
-    // Check if the phone number format is valid
-    const phoneRegex = /^[0-9]{10}$/; // Adjust as per your requirements
+    const phoneRegex = /^[0-9]{10}$/;
     if (phoneField.value && !phoneRegex.test(phoneField.value)) {
       error = document.createElement("span");
       error.className = "error-message";
@@ -86,30 +80,23 @@ document.addEventListener("DOMContentLoaded", () => {
     return true;
   };
 
-  // Form submission handler
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // Prevent form from submitting
+ 
 
     let isFormValid = true;
 
-    // Validate all required fields
-    isFormValid &= validateField(studentName, "Student name is required.");
-    isFormValid &= validateField(gender, "Gender is required.");
-    isFormValid &= validateField(studentClass, "Class is required.");
-    isFormValid &= validateField(dob, "Date of birth is required.");
-    isFormValid &= validateField(religion, "Religion is required.");
-    isFormValid &= validateField(
-      enrollmentDate,
-      "Enrollment date is required."
-    );
-    isFormValid &= validateField(address, "Address is required.");
-    isFormValid &= validateField(fileUpload, "Student photo is required.");
+    isFormValid &&= validateField(studentName, "Student name is required.");
+    isFormValid &&= validateField(gender, "Gender is required.");
+    isFormValid &&= validateField(studentClass, "Class is required.");
+    isFormValid &&= validateField(dob, "Date of birth is required.");
+    isFormValid &&= validateField(religion, "Religion is required.");
+    isFormValid &&= validateField(enrollmentDate, "Enrollment date is required.");
+    isFormValid &&= validateField(address, "Address is required.");
+    isFormValid &&= validateField(fileUpload, "Student photo is required.");
 
-    // Validate email and phone separately
-    isFormValid &= validateEmail(email);
-    isFormValid &= validatePhone(phone);
+    isFormValid &&= validateEmail(email);
+    isFormValid &&= validatePhone(phone);
 
-    // If the form is valid, log the data and show success message
     if (isFormValid) {
       const formData = {
         studentName: studentName.value.trim(),
@@ -127,16 +114,31 @@ document.addEventListener("DOMContentLoaded", () => {
         photo: fileUpload.files[0]?.name || "No file uploaded",
       };
 
-      console.log("Form Data Collected: ", formData);
-
-      alert("Form submitted successfully!"); // Success feedback
-      form.reset(); // Reset form fields
+      // Send data to the backend
+      fetch('/api/students', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+        .then((response) => {
+          if (response.ok) {
+            alert('Form submitted successfully!');
+            form.reset();
+          } else {
+            response.json().then((data) => {
+              alert(`Failed to submit form: ${data.error}`);
+            });
+          }
+        })
+        .catch((error) => {
+          console.error('Error submitting form:', error);
+          alert('An error occurred while submitting the form.');
+        });
     } else {
-      alert("Please fix the errors in the form before submitting.");
+      alert("Please Fix the errors in the form before submitting.");
     }
   });
 
-  // Real-time validation listeners for key fields
   studentName.addEventListener("blur", () =>
     validateField(studentName, "Student name is required.")
   );

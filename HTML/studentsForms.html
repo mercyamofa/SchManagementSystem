@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>students form</title>
+    <title>Student Form</title>
     <link rel="stylesheet" href="/CSS/studentsForms.css" />
     <link
       rel="stylesheet"
@@ -16,7 +16,6 @@
     <div class="container">
       <div class="sidebar">
         <div class="logo">
-          <!-- <img src="path/to/logo.png" alt="Logo" /> -->
           <h2>Student Mng. System</h2>
         </div>
         <ul class="nav">
@@ -27,18 +26,10 @@
             <a href="#">
               <i class="fas fa-user-graduate"></i> Students
               <i class="fas fa-caret-down"></i>
-              <!-- Dropdown indicator -->
             </a>
             <ul class="dropdown-menu">
-              <li>
-                <a href="../HTML/studentsForms.html">Add Student</a>
-              </li>
-              <li>
-                <a href="../HTML/studentdashboard.html">View Students</a>
-              </li>
-              <!-- <li>
-                <a href="../HTML/manageStudents.html">Manage Students</a>
-              </li> -->
+              <li><a href="../HTML/studentsForms.html">Add Student</a></li>
+              <li><a href="../HTML/studentdashboard.html">View Students</a></li>
             </ul>
           </li>
           <li>
@@ -50,21 +41,12 @@
             <a href="#">
               <i class="fas fa-user-graduate"></i> Teachers
               <i class="fas fa-caret-down"></i>
-              <!-- Dropdown indicator -->
             </a>
             <ul class="dropdown-menu">
-              <li>
-                <a href="../HTML/teachersforms.html">Add Teachers</a>
-              </li>
-              <li>
-                <a href="../HTML/teachersdashboard.html">View Teachers</a>
-              </li>
-              <!-- <li>
-                <a href="../HTML/manageStudents.html">Manage Students</a>
-              </li> -->
+              <li><a href="../HTML/teachersforms.html">Add Teachers</a></li>
+              <li><a href="../HTML/teachersdashboard.html">View Teachers</a></li>
             </ul>
           </li>
-
           <li>
             <a href="#"><i class="fas fa-cog"></i> Account</a>
           </li>
@@ -78,7 +60,8 @@
       </div>
 
       <div class="flex-container">
-        <form id="studentForm">
+        <!-- Updated Form -->
+        <form id="studentForm" action="http://localhost:3000/api/students" method="POST">
           <!-- Student Section -->
           <h2>Add New Student</h2>
           <div class="form-section">
@@ -89,12 +72,14 @@
                 <input
                   type="text"
                   id="studentName"
+                  name="name"
                   placeholder="Enter student's name"
+                  
                 />
               </div>
               <div class="form-row">
                 <label for="gender">Gender *</label>
-                <select id="gender">
+                <select id="gender" name="gender" >
                   <option value="">Please Select Gender</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
@@ -103,7 +88,7 @@
               </div>
               <div class="form-row">
                 <label for="class">Class *</label>
-                <select id="class">
+                <select id="class" name="class" >
                   <option value="">Please Select Class</option>
                   <option value="class1">Class 1</option>
                   <option value="class2">Class 2</option>
@@ -112,15 +97,21 @@
               </div>
               <div class="form-row">
                 <label for="dob">Date of Birth *</label>
-                <input type="date" id="dob" />
+                <input type="date" id="dob" name="dob"  />
               </div>
               <div class="form-row">
                 <label for="religion">Religion *</label>
-                <input type="text" id="religion" placeholder="Enter religion" />
+                <input
+                  type="text"
+                  id="religion"
+                  name="religion"
+                  placeholder="Enter religion"
+                 
+                />
               </div>
               <div class="form-row">
                 <label for="enrollmentDate">Enrollment Date *</label>
-                <input type="date" id="enrollmentDate" />
+                <input type="date" id="enrollmentDate" name="enrollmentDate" />
               </div>
             </div>
           </div>
@@ -134,6 +125,7 @@
                 <input
                   type="text"
                   id="fatherName"
+                  name="fatherName"
                   placeholder="Enter father's name"
                 />
               </div>
@@ -142,6 +134,7 @@
                 <input
                   type="text"
                   id="motherName"
+                  name="motherName"
                   placeholder="Enter mother's name"
                 />
               </div>
@@ -150,33 +143,42 @@
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   placeholder="Enter email address"
                 />
               </div>
               <div class="form-row">
                 <label for="phone">Phone</label>
-                <input type="tel" id="phone" placeholder="Enter phone number" />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="Enter phone number"
+                />
               </div>
               <div class="form-row">
                 <label for="occupation">Father's Occupation</label>
                 <input
                   type="text"
                   id="occupation"
+                  name="occupation"
                   placeholder="Enter father's occupation"
                 />
               </div>
               <div class="form-row">
                 <label for="address">Address *</label>
-                <input type="text" id="address" placeholder="Enter address" />
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="Enter address"
+                 
+                />
               </div>
             </div>
           </div>
-          <div class="file-upload">
-            <input type="file" accept="image/*" />
-            <span>Upload Student Photo</span>
-          </div>
+
           <div class="form-actions">
-            <!-- <button type="submit" class="save">Save</button> -->
             <button type="submit" class="submit">Submit</button>
             <button type="reset" class="reset">Reset</button>
           </div>
